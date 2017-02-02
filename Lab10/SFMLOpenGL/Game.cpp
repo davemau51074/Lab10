@@ -327,18 +327,27 @@ void Game::update()
 		}
 	}
 
-	//Change vertex data
-	//vertex[0].coordinate[0] += -0.0001f;
-	//vertex[0].coordinate[1] += -0.0001f;
-	//vertex[0].coordinate[2] += -0.0001f;
 
-	//vertex[1].coordinate[0] += -0.0001f;
-	//vertex[1].coordinate[1] += -0.0001f;
-	//vertex[1].coordinate[2] += -0.0001f;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::K))
+	{
 
-	//vertex[2].coordinate[0] += -0.0001f;
-	//vertex[2].coordinate[1] += -0.0001f;
-	//vertex[2].coordinate[2] += -0.0001f;
+	
+		vertex[0].coordinate[0] += -0.0001f;
+		vertex[0].coordinate[1] += -0.0001f;
+		vertex[0].coordinate[2] += -0.0001f;
+
+		vertex[1].coordinate[0] += -0.0001f;
+		vertex[1].coordinate[1] += -0.0001f;
+		vertex[1].coordinate[2] += -0.0001f;
+
+		vertex[2].coordinate[0] += -0.0001f;
+		vertex[2].coordinate[1] += -0.0001f;
+		vertex[2].coordinate[2] += -0.0001f;
+
+		vertex[3].coordinate[0] += -0.0001f;
+		vertex[3].coordinate[1] += -0.0001f;
+		vertex[3].coordinate[2] += -0.0001f;
+	}
 
 #if (DEBUG >= 2)
 	DEBUG_MSG("Update up...");
@@ -381,6 +390,9 @@ void Game::render()
 	glEnableVertexAttribArray(positionID);
 	glEnableVertexAttribArray(colorID);
 	glEnableVertexAttribArray(texelID);
+
+	//glEnable(GL_CULL_FACE);
+
 
 	glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_BYTE, (char*)NULL + 0);
 
